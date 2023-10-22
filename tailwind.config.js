@@ -19,6 +19,9 @@ module.exports = {
         "blue-accent": "#0084d4",
         "blue-accent-hover": "#009fff",
       },
+      fontFamily: {
+        poppins: [`var(--font-poppins)`, "sans-serif"],
+      },
     },
   },
   plugins: [],

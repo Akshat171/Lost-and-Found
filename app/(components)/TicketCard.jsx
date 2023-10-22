@@ -31,6 +31,7 @@ const TicketCard = ({ ticket }) => {
         <h4 className="uppercase">{ticket.title}</h4>
         <hr className="h-px border-0 bg-page mb-2" />
         <p className="whitespace-pre-wrap ">{ticket.description}</p>
+        <p className="whitespace-pre-wrap ">{ticket.location}</p>
         <div className="flex-grow"></div>
         <div className="flex mt-2 ">
           <div className="flex flex-col">

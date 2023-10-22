@@ -32,7 +32,7 @@
   }
 
   input,select,textarea{
-@apply m-1 rounded bg-card p-1
+@apply m-1 rounded bg-card
   }
 }
 
