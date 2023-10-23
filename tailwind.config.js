@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       colors: {
         nav: "#18222f",
-        page: "#2b3441",
+        page: "#e1e1e1",
         card: "#47566a",
         "card-hover": "#4f5e74",
         "default-text": "#f1f3f5",

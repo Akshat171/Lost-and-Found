@@ -40,13 +40,15 @@ function DropZone({ className }) {
         {isDragActive ? (
           <p>Drop the files here</p>
         ) : (
-          <p>Drag & drop some files here or click to select files</p>
+          <p className="text-nav">
+            Drag & drop files here or click to select files
+          </p>
         )}
       </div>
       <h3 className="title text-lg font-semibold text-neutral-600 mt-10 border-b-2 pb-3">
         Accepted files
       </h3>
-      <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-10">
+      <ul className="mt-6  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-10">
         {files.map((file) => (
           <li key={file.name} className="relative h-32 rounded-md shadow-lg">
             <Image

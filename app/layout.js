@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.variable} `}>
-        <div className="flex flex-col h-screen max-h-screen">
+        <div className="flex flex-col h-screen max-h-screen font-poppins">
           <Nav />
           <div className="flex-grow overflow-y-auto bg-page text-default-text">
             {" "}

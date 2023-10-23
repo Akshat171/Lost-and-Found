@@ -3,6 +3,7 @@ import DeleteBlock from "./DeleteBlock";
 import PriorityDisplay from "./PriorityDisplay";
 import ProgressDisplay from "./ProgressDisplay";
 import StatusDisplay from "./StatusDisplay";
+import Image from "next/image";
 
 const TicketCard = ({ ticket }) => {
   const formatTimeStamp = (timestamp) => {
@@ -22,7 +23,6 @@ const TicketCard = ({ ticket }) => {
     <div className="flex flex-col bg-card hover:bg-card-hover rounded-md shadow-lg p-3 m-2">
       <div className="flex mb-3 ">
         {" "}
-        <PriorityDisplay priority={ticket.priority} />
         <div className="ml-auto">
           <DeleteBlock id={ticket._id} />
         </div>
@@ -31,12 +31,17 @@ const TicketCard = ({ ticket }) => {
         <h4 className="uppercase">{ticket.title}</h4>
         <hr className="h-px border-0 bg-page mb-2" />
         <p className="whitespace-pre-wrap ">{ticket.description}</p>
-        <p className="whitespace-pre-wrap ">{ticket.location}</p>
+        <p className="whitespace-pre-wrap  mt-3 ">
+          Location: {ticket.location}
+        </p>
+        <p className="whitespace-pre-wrap  mt-3 ">Owner name: {ticket.name}</p>
+        <p className="whitespace-pre-wrap  mt-3 ">Contact: {ticket.contact}</p>
         <div className="flex-grow"></div>
-        <div className="flex mt-2 ">
+        <div className="flex mt-1 ">
           <div className="flex flex-col">
-            <p className="text-xs my-1">{formatTimeStamp(ticket.createdAt)}</p>
-            <ProgressDisplay progress={ticket.progress} />
+            <p className="text-xs my-1">
+              Time: {formatTimeStamp(ticket.createdAt)}
+            </p>
           </div>
           <div className="ml-auto flex items-center">
             {" "}

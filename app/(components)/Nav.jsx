@@ -1,11 +1,16 @@
-import { faHome, faTicket } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faTicket,
+  faUser,
+  fawp,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 const Nav = () => {
   return (
     <nav className="flex justify-between bg-nav p-4">
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-6">
         <Link href="/">
           <FontAwesomeIcon icon={faHome} className="icon" />
         </Link>
@@ -14,7 +19,10 @@ const Nav = () => {
         </Link>
       </div>
       <div>
-        <p className=" text-default-text">jake.lower17@gmail.com</p>
+        <h2 className="text-default-text ">LOST & FOUND</h2>
+      </div>
+      <div className="items-center mt-2 mr-2">
+        <FontAwesomeIcon icon={faUser} className="icon" />
       </div>
     </nav>
   );
