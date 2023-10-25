@@ -22,7 +22,7 @@ const Nav = () => {
         <h2 className="text-default-text ">LOST & FOUND</h2>
       </div>
       <div className="items-center mt-2 mr-2">
-        <FontAwesomeIcon icon={faUser} className="icon" />
+        <FontAwesomeIcon href="/login" icon={faUser} className="icon" />
       </div>
     </nav>
   );
