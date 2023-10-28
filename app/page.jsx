@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import TicketCard from "./(components)/TicketCard";
@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 const getTickets = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/Tickets", {
+    const res = await fetch("/api/Tickets", {
       cache: "no-store",
     });
 
@@ -21,10 +21,15 @@ const getTickets = async () => {
   }
 };
 
-const Dashboard = async () => {
+const Dashboard = () => {
   // const [data, setData] = useState("none");
   const router = useRouter();
-  const { tickets } = await getTickets();
+  const [tickets, setTickets] = React.useState();
+  useEffect(() => {
+    getTickets().then((data) => {
+      setTickets(data.tickets);
+    });
+  }, []);
 
   const uniqueCategories = [
     ...new Set(tickets?.map(({ category }) => category)),
@@ -36,7 +41,6 @@ const Dashboard = async () => {
       toast.success("Logout success");
       router.push("/login");
     } catch (error) {
-      console / logout(error.message);
       toast.error(error.message);
     }
   };
@@ -49,9 +53,7 @@ const Dashboard = async () => {
 
   return (
     <div className="p-5">
-      <button onClick={logout} className="p-2 bg-nav text-white rounded top-0">
-        Logout
-      </button>
+      <button className="p-2 bg-nav text-white rounded top-0">Logout</button>
       <div>
         {tickets &&
           uniqueCategories?.map((uniqueCategory, categoryIndex) => (
