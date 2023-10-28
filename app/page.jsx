@@ -53,7 +53,9 @@ const Dashboard = () => {
 
   return (
     <div className="p-5">
-      <button className="p-2 bg-nav text-white rounded top-0">Logout</button>
+      <button onClick={logout} className="p-2 bg-nav text-white rounded top-0">
+        Logout
+      </button>
       <div>
         {tickets &&
           uniqueCategories?.map((uniqueCategory, categoryIndex) => (
