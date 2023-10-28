@@ -1,9 +1,12 @@
 import TicketForm from "@/app/(components)/TicketForm";
 
 const getTicketById = async (id) => {
-  const res = await fetch(`/api/Tickets/${id}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `https://lost-and-found-e08gungsv-akshat171.vercel.app/api/Tickets/${id}`,
+    {
+      cache: "no-store",
+    }
+  );
   if (!res.ok) {
     throw new Error("Could not find ticket");
   }
