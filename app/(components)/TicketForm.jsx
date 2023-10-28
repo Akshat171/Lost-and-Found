@@ -2,7 +2,6 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import DropZone from "./DropZone";
-
 const EditTicketForm = ({ ticket }) => {
   const EDITMODE = ticket._id === "new" ? false : true;
   const router = useRouter();
@@ -12,7 +11,7 @@ const EditTicketForm = ({ ticket }) => {
     location: "",
     name: "",
     contact: "",
-    priority: 1,
+
     status: "Lost",
     category: "Gadget",
   };
@@ -23,7 +22,6 @@ const EditTicketForm = ({ ticket }) => {
     startingTicketData["location"] = ticket.location;
     startingTicketData["name"] = ticket.name;
     startingTicketData["contact"] = ticket.contact;
-    startingTicketData["priority"] = ticket.priority;
     startingTicketData["status"] = ticket.status;
     startingTicketData["category"] = ticket.category;
   }
@@ -70,7 +68,7 @@ const EditTicketForm = ({ ticket }) => {
     router.push("/");
   };
 
-  const categories = ["gadget", "jewellery", "sport", "stationary"];
+  const categories = ["Gadget", "Jewellery", "Sport", "stationary"];
 
   return (
     <div className=" flex justify-center">
@@ -84,6 +82,7 @@ const EditTicketForm = ({ ticket }) => {
         </h3>
         <label className="text-nav">Title</label>
         <input
+          className="p-1"
           id="title"
           name="title"
           type="text"
@@ -102,6 +101,7 @@ const EditTicketForm = ({ ticket }) => {
         />
         <label className="text-nav">Location</label>
         <input
+          className="p-1"
           id="location"
           name="location"
           type="text"
@@ -109,8 +109,9 @@ const EditTicketForm = ({ ticket }) => {
           required={true}
           value={formData.location}
         />
-        <label className="text-nav">Owner name</label>
+        <label className="text-nav">Owner/Locator name</label>
         <input
+          className="p-1"
           id="name"
           name="name"
           type="text"
@@ -120,9 +121,10 @@ const EditTicketForm = ({ ticket }) => {
         />
         <label className="text-nav">Contact No.</label>
         <input
+          className="p-1"
           id="contact"
           name="contact"
-          type="number"
+          type="tel"
           onChange={handleChange}
           required={true}
           value={formData.contact}
@@ -136,6 +138,7 @@ const EditTicketForm = ({ ticket }) => {
           name="category"
           value={formData.category}
           onChange={handleChange}
+          className="p-1"
         >
           {categories?.map((category, _index) => (
             <option key={_index} value={category}>
@@ -145,7 +148,12 @@ const EditTicketForm = ({ ticket }) => {
         </select>
 
         <label className="text-nav">Status</label>
-        <select name="status" value={formData.status} onChange={handleChange}>
+        <select
+          name="status"
+          value={formData.status}
+          onChange={handleChange}
+          className="p-1"
+        >
           <option value="lost">Lost</option>
           <option value="found">Found</option>
         </select>

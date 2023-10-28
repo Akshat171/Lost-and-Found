@@ -38,7 +38,7 @@
 
 @layer components{
   .icon{
-    @apply text-default-text text-xl
+    @apply text-default-text text-2xl
   }
 
   .btn{

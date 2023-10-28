@@ -3,7 +3,8 @@ import "./globals.css";
 import Nav from "./(components)/Nav";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-
+import NextTopLoader from "nextjs-toploader";
+import { Toaster } from "react-hot-toast";
 config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,7 +24,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${poppins.variable} `}>
         <div className="flex flex-col h-screen max-h-screen font-poppins">
+          <NextTopLoader color="rgb(255, 0, 0)" />
+          <Toaster position="top-center" />
           <Nav />
+
           <div className="flex-grow overflow-y-auto bg-page text-default-text">
             {" "}
             {children}

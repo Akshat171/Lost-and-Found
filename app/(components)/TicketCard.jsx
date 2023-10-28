@@ -1,7 +1,6 @@
 import Link from "next/link";
 import DeleteBlock from "./DeleteBlock";
-import PriorityDisplay from "./PriorityDisplay";
-import ProgressDisplay from "./ProgressDisplay";
+
 import StatusDisplay from "./StatusDisplay";
 import Image from "next/image";
 
@@ -31,16 +30,23 @@ const TicketCard = ({ ticket }) => {
         <h4 className="uppercase">{ticket.title}</h4>
         <hr className="h-px border-0 bg-page mb-2" />
         <p className="whitespace-pre-wrap ">{ticket.description}</p>
-        <p className="whitespace-pre-wrap  mt-3 ">
-          Location: {ticket.location}
+        <p className="whitespace-pre-wrap  mt-3  ">
+          <span className="font-semibold">Location: </span>
+          {ticket.location}
         </p>
-        <p className="whitespace-pre-wrap  mt-3 ">Owner name: {ticket.name}</p>
-        <p className="whitespace-pre-wrap  mt-3 ">Contact: {ticket.contact}</p>
+        <p className="whitespace-pre-wrap  mt-3 ">
+          <span className="font-semibold">Owner/Locator name:</span>{" "}
+          {ticket.name}
+        </p>
+        <p className="whitespace-pre-wrap  mt-3 ">
+          <span className="font-semibold">Contact:</span> {ticket.contact}
+        </p>
         <div className="flex-grow"></div>
         <div className="flex mt-1 ">
           <div className="flex flex-col">
             <p className="text-xs my-1">
-              Time: {formatTimeStamp(ticket.createdAt)}
+              <span className="font-semibold">Time:</span>{" "}
+              {formatTimeStamp(ticket.createdAt)}
             </p>
           </div>
           <div className="ml-auto flex items-center">
