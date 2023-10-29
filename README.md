@@ -2,16 +2,16 @@
 Developed a user-friendly platform for college members to report and track lost and found items, enhancing campus-wide communication. It is built using Next.js 13, MongoDB, and React Hot Toast.
 
 # Demo:
-![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/c53f3e55-a3c9-4857-a995-3104977bd297)
+![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/0c5adad9-3618-4bd3-8936-25464fe90ca3)
 
-![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/cd44e88d-c07d-4a6d-ba74-42e46d41d445)
+![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/d280a0d5-266b-4cf1-a362-42583387a63d)
 
-![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/8016ef9d-fcd6-4515-b1d1-eaed8456d6b2)
+![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/7225b654-3f65-41e0-add6-a7597c1250f5)
 
-![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/2d1b3e06-3fac-41b2-9422-622d0c46e43f)
+![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/e1ba8ec8-afa1-4481-93b2-c762d4d44570)
 
+![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/58861793-9256-4157-a5e7-7e6f9e0eb675)
 
-![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/726442b0-f9dd-4dac-a084-a75ce5a0159f)
 
 ### How to Use
 
