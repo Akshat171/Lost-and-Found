@@ -15,7 +15,11 @@ const getTickets = async () => {
       throw new Error("Failed to fetch topics");
     }
 
-    return res.json();
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        return resolve(res.json());
+      }, 1000);
+    });
   } catch (error) {
     console.log("Error loading topics: ", error);
   }

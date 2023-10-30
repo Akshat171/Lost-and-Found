@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${poppins.variable} `}>
         <div className="flex flex-col h-screen max-h-screen font-poppins">
-          <NextTopLoader color="rgb(255, 0, 0)" />
+          <NextTopLoader color="rgb(255, 0, 0)" height={3} />
           <Toaster position="top-center" />
           <Nav />
 

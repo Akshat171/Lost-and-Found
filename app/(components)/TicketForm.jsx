@@ -83,6 +83,7 @@ const EditTicketForm = ({ ticket }) => {
         <label className="text-nav">Title</label>
         <input
           className="p-1"
+          autoComplete="off"
           id="title"
           name="title"
           type="text"
@@ -94,6 +95,7 @@ const EditTicketForm = ({ ticket }) => {
         <textarea
           id="description"
           name="description"
+          autoComplete="off"
           onChange={handleChange}
           required={true}
           value={formData.description}
@@ -103,6 +105,7 @@ const EditTicketForm = ({ ticket }) => {
         <input
           className="p-1"
           id="location"
+          autoComplete="off"
           name="location"
           type="text"
           onChange={handleChange}
@@ -113,6 +116,7 @@ const EditTicketForm = ({ ticket }) => {
         <input
           className="p-1"
           id="name"
+          autoComplete="off"
           name="name"
           type="text"
           onChange={handleChange}
@@ -125,6 +129,7 @@ const EditTicketForm = ({ ticket }) => {
           id="contact"
           name="contact"
           type="tel"
+          autoComplete="off"
           onChange={handleChange}
           required={true}
           value={formData.contact}
