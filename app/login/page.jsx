@@ -50,7 +50,6 @@ export default function LoginPage() {
         id="email"
         type="email"
         autoComplete="off"
-        area-aria-autocomplete="none"
         value={user.email}
         onChange={(e) => setUser({ ...user, email: e.target.value })}
         placeholder="email"
@@ -63,7 +62,6 @@ export default function LoginPage() {
         id="password"
         type="password"
         autoComplete="off"
-        area-aria-autocomplete="none"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
         placeholder="password"
