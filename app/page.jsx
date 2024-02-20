@@ -43,7 +43,7 @@ const Dashboard = () => {
     try {
       await axios.get("/api/users/logout");
       toast.success("Logout success");
-      router.push("/login");
+      window.location.href = `/login`;
     } catch (error) {
       toast.error(error.message);
     }

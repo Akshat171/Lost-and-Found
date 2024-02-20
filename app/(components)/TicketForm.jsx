@@ -165,7 +165,7 @@ const EditTicketForm = ({ ticket }) => {
         <input
           type="submit"
           className="btn max-w-full"
-          value={EDITMODE ? "Update Ticket" : "Create Ticket"}
+          value={EDITMODE ? "Update form" : "Submit form"}
         />
       </form>
     </div>

@@ -10,7 +10,7 @@ const DeleteBlock = ({ id }) => {
       method: "DELETE",
     });
     if (res.ok) {
-      router.refresh();
+      window.location.href = window.location.href;
     }
   };
   return (
