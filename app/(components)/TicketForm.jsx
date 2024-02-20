@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import DropZone from "./DropZone";
+import Nav from "./Nav";
 const EditTicketForm = ({ ticket }) => {
   const EDITMODE = ticket._id === "new" ? false : true;
   const router = useRouter();
@@ -71,104 +72,108 @@ const EditTicketForm = ({ ticket }) => {
   const categories = ["Gadget", "Jewellery", "Sport", "stationary"];
 
   return (
-    <div className=" flex justify-center">
-      <form
-        onSubmit={handleSubmit}
-        method="post"
-        className="flex flex-col gap-3 w-full md:w-1/2  border border-nav p-10 rounded-none"
-      >
-        <h3 className="text-nav">
-          {EDITMODE ? "Update Your Ticket" : "Create New Ticket"}
-        </h3>
-        <label className="text-nav">Title</label>
-        <input
-          className="p-1"
-          autoComplete="off"
-          id="title"
-          name="title"
-          type="text"
-          onChange={handleChange}
-          required={true}
-          value={formData.title}
-        />
-        <label className="text-nav">Description</label>
-        <textarea
-          id="description"
-          name="description"
-          autoComplete="off"
-          onChange={handleChange}
-          required={true}
-          value={formData.description}
-          rows="5"
-        />
-        <label className="text-nav">Location</label>
-        <input
-          className="p-1"
-          id="location"
-          autoComplete="off"
-          name="location"
-          type="text"
-          onChange={handleChange}
-          required={true}
-          value={formData.location}
-        />
-        <label className="text-nav">Owner/Locator name</label>
-        <input
-          className="p-1"
-          id="name"
-          autoComplete="off"
-          name="name"
-          type="text"
-          onChange={handleChange}
-          required={true}
-          value={formData.name}
-        />
-        <label className="text-nav">Contact No.</label>
-        <input
-          className="p-1"
-          id="contact"
-          name="contact"
-          type="tel"
-          autoComplete="off"
-          onChange={handleChange}
-          required={true}
-          value={formData.contact}
-        />
-
-        <label className="text-nav">Image</label>
-        <DropZone className=" p-10 mt-6 text-nav border border-neutral-400" />
-
-        <label className="text-nav">Category</label>
-        <select
-          name="category"
-          value={formData.category}
-          onChange={handleChange}
-          className="p-1"
+    <>
+      <Nav />
+      <div className=" flex justify-center">
+        <form
+          onSubmit={handleSubmit}
+          method="post"
+          className="flex flex-col gap-3 w-full md:w-1/2  border-2 border-black p-10 rounded-lg  "
         >
-          {categories?.map((category, _index) => (
-            <option key={_index} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
+          <h3 className="text-black flex justify-center">
+            {EDITMODE ? "Update Your Ticket" : "Create New Ticket"}
+          </h3>
+          <label className="text-black">Item Name</label>
+          <input
+            className="p-1 border text-black"
+            autoComplete="off"
+            id="title"
+            name="title"
+            type="text"
+            onChange={handleChange}
+            required={true}
+            value={formData.title}
+          />
+          <label className="text-black">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            autoComplete="off"
+            onChange={handleChange}
+            required={true}
+            value={formData.description}
+            rows="5"
+            className="border text-black"
+          />
+          <label className="text-black">Location</label>
+          <input
+            className="p-1 border text-black"
+            id="location"
+            autoComplete="off"
+            name="location"
+            type="text"
+            onChange={handleChange}
+            required={true}
+            value={formData.location}
+          />
+          <label className="text-black">Owner/Locator name</label>
+          <input
+            className="p-1 border text-black"
+            id="name"
+            autoComplete="off"
+            name="name"
+            type="text"
+            onChange={handleChange}
+            required={true}
+            value={formData.name}
+          />
+          <label className="text-black">Contact No.</label>
+          <input
+            className="p-1 border text-black"
+            id="contact"
+            name="contact"
+            type="tel"
+            autoComplete="off"
+            onChange={handleChange}
+            required={true}
+            value={formData.contact}
+          />
 
-        <label className="text-nav">Status</label>
-        <select
-          name="status"
-          value={formData.status}
-          onChange={handleChange}
-          className="p-1"
-        >
-          <option value="lost">Lost</option>
-          <option value="found">Found</option>
-        </select>
-        <input
-          type="submit"
-          className="btn max-w-full"
-          value={EDITMODE ? "Update form" : "Submit form"}
-        />
-      </form>
-    </div>
+          <label className="text-black">Picture</label>
+          <DropZone className=" p-10 mt-6 text-black border border-neutral-400" />
+
+          <label className="text-black">Category</label>
+          <select
+            name="category"
+            value={formData.category}
+            onChange={handleChange}
+            className="p-1 text-black border border-black"
+          >
+            {categories?.map((category, _index) => (
+              <option key={_index} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+
+          <label className="text-black">Status</label>
+          <select
+            name="status"
+            value={formData.status}
+            onChange={handleChange}
+            className="p-1 text-black border border-black"
+          >
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+          </select>
+          <input
+            type="submit"
+            className="btn max-w-full"
+            value={EDITMODE ? "Update form" : "Submit form"}
+          />
+        </form>
+      </div>
+    </>
   );
 };
 

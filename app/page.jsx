@@ -5,6 +5,7 @@ import Link from "next/link";
 import TicketCard from "./(components)/TicketCard";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import Nav from "./(components)/Nav";
 const getTickets = async () => {
   try {
     const res = await fetch("/api/Tickets", {
@@ -56,30 +57,30 @@ const Dashboard = () => {
   // };
 
   return (
-    <div className="p-5">
-      <button onClick={logout} className="p-2 bg-nav text-white rounded top-0">
-        Logout
-      </button>
-      <div>
-        {tickets &&
-          uniqueCategories?.map((uniqueCategory, categoryIndex) => (
-            <div key={categoryIndex} className="mb-4 ">
-              <h2 className="text-nav">{uniqueCategory}</h2>
-              <div className="lg:grid grid-cols-2 xl:grid-cols-4 ">
-                {tickets
-                  .filter((ticket) => ticket.category === uniqueCategory)
-                  .map((filteredTicket, _index) => (
-                    <TicketCard
-                      id={_index}
-                      key={_index}
-                      ticket={filteredTicket}
-                    />
-                  ))}
+    <>
+      <Nav />
+      <div className="p-5">
+        <div>
+          {tickets &&
+            uniqueCategories?.map((uniqueCategory, categoryIndex) => (
+              <div key={categoryIndex} className="mb-4 ">
+                <h2 className="text-black">{uniqueCategory}</h2>
+                <div className="lg:grid grid-cols-2 xl:grid-cols-4 ">
+                  {tickets
+                    .filter((ticket) => ticket.category === uniqueCategory)
+                    .map((filteredTicket, _index) => (
+                      <TicketCard
+                        id={_index}
+                        key={_index}
+                        ticket={filteredTicket}
+                      />
+                    ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

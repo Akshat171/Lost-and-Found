@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
         <div className="flex flex-col h-screen max-h-screen font-poppins">
           <NextTopLoader color="rgb(255, 0, 0)" height={3} />
           <Toaster position="top-center" />
-          <Nav />
 
           <div className="flex-grow overflow-y-auto bg-page text-default-text">
             {" "}

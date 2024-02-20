@@ -11,8 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        nav: "#18222f",
-        page: "#e1e1e1",
+        nav: "white",
+        page: "white",
+        // page: "#e1e1e1",
         card: "#47566a",
         "card-hover": "#4f5e74",
         "default-text": "#f1f3f5",
