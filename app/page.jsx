@@ -6,7 +6,7 @@ import TicketCard from "./(components)/TicketCard";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Nav from "./(components)/Nav";
-import Navbar from "./(components)/Nav_1";
+import Navbar from "./(components)/Nav";
 const getTickets = async () => {
   try {
     const res = await fetch("/api/Tickets", {

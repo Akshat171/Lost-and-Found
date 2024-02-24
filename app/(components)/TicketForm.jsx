@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import DropZone from "./DropZone";
 import Nav from "./Nav";
-import Navbar from "./Nav_1";
+import Navbar from "./Nav";
 const EditTicketForm = ({ ticket }) => {
   const EDITMODE = ticket._id === "new" ? false : true;
   const router = useRouter();
