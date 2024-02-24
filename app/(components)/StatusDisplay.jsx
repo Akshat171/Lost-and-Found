@@ -14,13 +14,12 @@ const StatusDisplay = ({ status }) => {
     return color;
   };
   return (
-    <span
-      className={`inline-block rounded-full text-xs px-2 py-1 font-semibold text-gray-700 ${getColor(
-        status
-      )}`}
-    >
-      {status}
-    </span>
+    <h3 className="text-sm text-gray-500 pb-2">
+      <span className={` py-1 px-2 text-white rounded-lg ${getColor(status)}`}>
+        <span className="absolute inset-0"></span>
+        {status}
+      </span>
+    </h3>
   );
 };
 
