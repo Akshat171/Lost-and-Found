@@ -12,7 +12,6 @@ const EditTicketForm = ({ ticket }) => {
     location: "",
     name: "",
     contact: "",
-
     status: "Lost",
     category: "Gadget",
   };
