@@ -2,46 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  h1,h2,h3,h4{
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-bold
   }
 
-  h1{
+  h1 {
     @apply text-4xl
   }
-  h2{
+
+  h2 {
     @apply text-3xl
   }
-  h3{
+
+  h3 {
     @apply text-2xl
   }
-  h4{
+
+  h4 {
     @apply text-xl
   }
-  p{
+
+  p {
     @apply text-sm text-default-text
   }
 
-  form{
+  form {
     @apply rounded-xl p-4
   }
 
-  label{
+  label {
     @apply mt-4
   }
 
-  input,select,textarea{
-@apply m-1 rounded 
+  input, select, textarea {
+    @apply m-1 rounded
   }
 }
 
-@layer components{
-  .icon{
+@layer components {
+  .icon {
     @apply text-default-text text-2xl
   }
 
-  .btn{
+  .btn {
     @apply hover:no-underline bg-blue-accent hover:bg-blue-accent-hover tracking-wider w-full text-center text-nav font-bold cursor-pointer uppercase px-4 py-2 rounded-md transition-colors block
   }
+}
+
+.login_img_section {
+
+  background: linear-gradient(rgba(2, 2, 2, .7), rgba(0, 0, 0, .7)), url(https://admissions.lnmiit.ac.in/assets/img/gallery/big/CENTRAL%20PLAZA.jpg) center center;
+
+}
+
+.signup-bg {
+  background-image: url(https://pbs.twimg.com/media/EOaMrr_UYAcPf3b.jpg:large);
 }
