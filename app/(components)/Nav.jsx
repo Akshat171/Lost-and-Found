@@ -24,16 +24,12 @@ const Navbar = () => {
       <div>
         {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="">Logo</a></h1> */}
         <h1 className="text-3xl  font-signature ml-2">
-          <Link
-            className="link-underline link-underline-black"
-            href="/"
-            target="_blank"
-          >
+          <Link className="link-underline link-underline-black" href="/">
             <span className="flex gap-1 items-center">
               <div className="bg-white rounded-full p-1">
                 <Image src={Icon} width={30} height={30} alt="nav-icon" />
               </div>
-              Lost/Found
+              Lost OR Found
             </span>{" "}
           </Link>
         </h1>
