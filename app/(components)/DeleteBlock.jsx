@@ -14,18 +14,13 @@ const DeleteBlock = ({ id }) => {
     }
   };
   return (
-    // <FontAwesomeIcon
-    //   icon={faX}
-    //   onClick={deleteTicket}
-    //   className="text-red-400 hover:cursor-pointer rounded-full p-3/4 border-red-500 border-2 hover:text-red-200"
-    // />
     <h3 className="text-sm text-gray-500 pb-2">
-      <div
+      <button
         className="py-1 px-2 text-black rounded-lg border-2 border-blue-500"
         onClick={deleteTicket}
       >
         Delete
-      </div>
+      </button>
     </h3>
   );
 };

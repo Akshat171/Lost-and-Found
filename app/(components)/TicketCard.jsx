@@ -19,17 +19,23 @@ const TicketCard = ({ ticket }) => {
     return formateDate;
   };
   return (
-    <Link href={`/TicketPage/${ticket._id}`} style={{ display: "contents" }}>
-      <div className="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform duration-200 p-2 m-2">
-        {
-          <div className="relative w-full h-80 md:h-64 lg:h-44">
-            <img
-              src="https://cdn.pixabay.com/photo/2021/07/24/01/42/zebra-dove-6488440_960_720.jpg"
-              alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-              className="w-full h-full object-center object-cover"
-            />
-          </div>
-        }
+    <div className="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform duration-200 p-2 m-2">
+      <div className="flex mb-3 z-100">
+        {" "}
+        <div className="ml-auto cursor-pointer">
+          <DeleteBlock id={ticket._id} />
+        </div>
+      </div>
+      {
+        <div className="relative w-full h-80 md:h-64 lg:h-44">
+          <img
+            src="https://cdn.pixabay.com/photo/2021/07/24/01/42/zebra-dove-6488440_960_720.jpg"
+            alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+            className="w-full h-full object-center object-cover"
+          />
+        </div>
+      }
+      <Link href={`/TicketPage/${ticket._id}`} style={{ display: "contents" }}>
         <div className="px-3 py-4 ">
           <h4 className="uppercase text-gray-900">{ticket.title}</h4>
           <hr className="h-px border-0 bg-black mb-2" />
@@ -59,13 +65,10 @@ const TicketCard = ({ ticket }) => {
               {" "}
               <StatusDisplay status={ticket.status} />
             </div>
-            <div className="p-1">
-              <DeleteBlock id={ticket._id} />
-            </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 
