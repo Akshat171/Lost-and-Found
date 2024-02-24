@@ -1,17 +1,12 @@
-"use client";
-import { FaWpforms, FaHome, FaRegUserCircle } from "react-icons/fa";
-import { BsMenuButtonWide } from "react-icons/bs";
-
+import Link from "next/link";
+import React, { useState } from "react";
+import { FaBars, FaRegUserCircle, FaTimes } from "react-icons/fa";
+import Icon from "../../public/icon.png";
+import Image from "next/image";
 import toast from "react-hot-toast";
 import axios from "axios";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
-
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
-  const router = useRouter();
+  const [nav, setNav] = useState(false);
 
   const logout = async () => {
     try {
@@ -24,82 +19,66 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`flex w-full items-center bg-black dark:bg-dark`}>
-      <div className="container">
-        <div className="relative -mx-4 flex items-center justify-between">
-          <div className="w-60 max-w-full px-4">
-            <Link href="/" className="block w-full py-5">
-              <img
-                src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo-primary.svg"
-                alt="logo"
-                className="dark:hidden"
-              />
-              <img
-                src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo-white.svg"
-                alt="logo"
-                className="hidden dark:block"
-              />
-            </Link>
-          </div>
-          <div className="flex w-full items-center justify-between px-4">
-            <div>
-              <button
-                onClick={() => setOpen(!open)}
-                id="navbarToggler"
-                className={` ${
-                  open && "navbarTogglerActive"
-                } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden border-none`}
-              >
-                <BsMenuButtonWide className="text-3xl" />
-              </button>
-              <nav
-                // :className="!navbarOpen && 'hidden' "
-                id="navbarCollapse"
-                className={`absolute right-4 top-full w-full max-w-[250px] rounded-b-lg bg-black px-6 py-5 shadow dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent ${
-                  !open && "hidden"
-                } `}
-              >
-                <ul className="block lg:flex">
-                  <ListItem NavLink="/">Home</ListItem>
-                  <ListItem NavLink="/TicketPage/new">Form</ListItem>
-                </ul>
-              </nav>
-            </div>
-            <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
-              <button
-                onClick={logout}
-                className="px-7 py-3 text-base font-medium text-dark hover:text-primary dark:text-white"
-              >
-                Logout
-              </button>
+    <div className="flex justify-between items-center w-full h-20 p-4 text-white bg-black nav">
+      <div>
+        {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="">Logo</a></h1> */}
+        <h1 className="text-3xl  font-signature ml-2">
+          <Link
+            className="link-underline link-underline-black"
+            href="/"
+            target="_blank"
+          >
+            <span className="flex gap-1 items-center">
+              <div className="bg-white rounded-full p-1">
+                <Image src={Icon} width={30} height={30} alt="nav-icon" />
+              </div>
+              Lost/Found
+            </span>{" "}
+          </Link>
+        </h1>
+      </div>
 
-              <button
-                href="/#"
-                className="rounded-md bg-primary px-7 py-3 text-base font-medium text-white hover:bg-primary/90"
-              >
-                <FaRegUserCircle className="icon ml-2" />
-              </button>
-            </div>
-          </div>
+      <div className="hidden md:flex">
+        <div className=" px-4 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105 hover:text-white duration-200 link-underline">
+          <Link href="/">Home</Link>
+        </div>
+        <div className=" px-4 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105 hover:text-white duration-200 link-underline">
+          <Link href="/TicketPage/new">Form</Link>
+        </div>
+        <div className=" px-4 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105 hover:text-white duration-200 link-underline ">
+          <button onClick={logout}>Logout</button>
+        </div>
+        <div className=" px-4 cursor-pointer capitalize font-medium text-gray-400 hover:scale-105 hover:text-white duration-200 link-underline">
+          <Link href="/">
+            <FaRegUserCircle className="icon ml-2" />
+          </Link>
         </div>
       </div>
-    </header>
+
+      <div
+        onClick={() => setNav(!nav)}
+        className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
+      >
+        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+      </div>
+
+      {nav && (
+        <ul className="flex flex-col z-10 justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
+          <li className=" px-4 cursor-pointer capitalize py-6 text-4xl">
+            <Link href="/">Home</Link>
+          </li>
+          <li className=" px-4 cursor-pointer capitalize py-6 text-4xl">
+            <Link href="/TicketPage/new">Form</Link>
+          </li>
+          <li className=" px-4 cursor-pointer capitalize py-6 text-4xl">
+            <Link href="/">
+              <FaRegUserCircle className="icon ml-2" />
+            </Link>
+          </li>
+        </ul>
+      )}
+    </div>
   );
 };
 
 export default Navbar;
-
-const ListItem = ({ children, NavLink }) => {
-  return (
-    <>
-      <li>
-        <Link
-          href={NavLink}
-          className="flex py-2 text-base  font-medium text-body-color hover:text-dark dark:text-dark-6  lg:ml-12 lg:inline-flex"
-        >
-          {children}
-        </Link>
-      </li>
-    </>
-  );
-};

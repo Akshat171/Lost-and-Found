@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import DropZone from "./DropZone";
 import Nav from "./Nav";
+import Navbar from "./Nav_1";
 const EditTicketForm = ({ ticket }) => {
   const EDITMODE = ticket._id === "new" ? false : true;
   const router = useRouter();
@@ -72,7 +73,7 @@ const EditTicketForm = ({ ticket }) => {
 
   return (
     <>
-      <Nav />
+      <Navbar />
       <div className=" flex justify-center">
         <form
           onSubmit={handleSubmit}
