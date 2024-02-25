@@ -7,11 +7,17 @@ Developed a user-friendly platform for college members to report and track lost 
 ![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/deb03f23-e134-403b-98f6-eb3ca3164a83)
 
 
-![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/7225b654-3f65-41e0-add6-a7597c1250f5)
 
-![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/e1ba8ec8-afa1-4481-93b2-c762d4d44570)
 
-![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/58861793-9256-4157-a5e7-7e6f9e0eb675)
+https://github.com/Akshat171/Lost-and-Found/assets/81281246/97a0886e-4655-47c6-a3b2-f104ed8be983
+
+
+
+![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/3d79e8b4-3dd5-43a3-aff3-10e10e8cd9f4)
+
+
+![image](https://github.com/Akshat171/Lost-and-Found/assets/81281246/70dc3712-ab84-4df4-84fd-9a41083e5224)
+
 
 
 ### How to Use
