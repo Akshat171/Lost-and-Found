@@ -56,14 +56,14 @@
 
 .login_img_section {
 
-  background: linear-gradient(rgba(2, 2, 2, .7), rgba(0, 0, 0, .7)), url(../public/login_bg.jpg) ;
+  background: linear-gradient(rgba(2, 2, 2, .7), rgba(0, 0, 0, .7)), url(https://admissions.lnmiit.ac.in/assets/img/gallery/big/CENTRAL%20PLAZA.jpg) ;
   background-repeat: no-repeat;
   background-size: cover;
 
 }
 
 .signup-bg {
-  background-image: url(../public/signup_bg.jpg);
+  background-image: url("/public/signup_bg.jpg");
   background-repeat: no-repeat;
     background-size: cover;
 }

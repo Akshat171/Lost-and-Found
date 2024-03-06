@@ -43,9 +43,9 @@ export default function LoginPage() {
 
   return (
     <>
-      <div className="h-screen  flex">
+      <div className="h-screen flex">
         <div
-          className="hidden lg:flex w-full login_img_section lg:w-1/2 
+          className="hidden lg:flex w-full lg:w-1/2 login_img_section
           justify-around items-center"
         >
           <div
